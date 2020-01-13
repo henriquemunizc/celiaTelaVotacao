@@ -8,9 +8,6 @@
                 <mat-panel-title>
                     {{cat.descricao}}
                 </mat-panel-title>
-                <!-- <mat-panel-description>
-                    Descrição
-                </mat-panel-description> -->
             </mat-expansion-panel-header>
 
             <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group"
@@ -44,14 +41,23 @@
                             </mat-expansion-panel>
                         </div>
                     </mat-accordion>
-
-
                 </div>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-radio-button class="radio-button" [value]="proj">
+                            </mat-radio-button>
+                            <div> Não posso opinar sobre essa categoria.</div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <mat-form-field class="full-width">
+                        <textarea matInput
+                            placeholder="Faça um comentário sobre não poder opinar sobre essa categoria"></textarea>
+                    </mat-form-field>
+                </mat-expansion-panel>
             </mat-radio-group>
-
-
         </mat-expansion-panel>
-
-
     </div>
 </mat-accordion>

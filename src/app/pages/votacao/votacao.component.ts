@@ -26,6 +26,7 @@ export class VotacaoComponent implements OnInit {
   categorias: CategoriaModel[];
   projetosSelecionados: ProjetoModel[];
   projetoSelecionado: ProjetoModel;
+  projEmBranco: ProjetoModel;
   projetoVotado: ProjetoModel;
   displayedColumns: string[] = ['select', 'descricao'];
 
@@ -39,6 +40,7 @@ export class VotacaoComponent implements OnInit {
   ngOnInit() {
     this.getCategorias();
     this.projetosSelecionados = [];
+    this.projEmBranco = null;
 
   }
 
