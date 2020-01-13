@@ -26,9 +26,13 @@
 
                                         <mat-radio-button class="radio-button" [value]="proj">
                                         </mat-radio-button>
-                                        {{proj.nome}}
+                                        <div [ngClass]="{'class-bold': o==1 }"> {{proj.nome}}</div>
                                     </mat-panel-title>
-                     
+                                    <div *ngIf="o==1">
+                                        <mat-panel-description>
+                                            <b>Voto do Relator - Fulano de Tal</b>
+                                        </mat-panel-description>
+                                    </div>
                                 </mat-expansion-panel-header>
 
                                 <mat-form-field class="full-width">
