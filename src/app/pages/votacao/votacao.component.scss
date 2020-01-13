@@ -11,6 +11,11 @@
 .full-width {
   width: 100%;
 }
-.class-bold{
+.class-bold {
   font-weight: bold;
+}
+.descricao-header-projeto {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }

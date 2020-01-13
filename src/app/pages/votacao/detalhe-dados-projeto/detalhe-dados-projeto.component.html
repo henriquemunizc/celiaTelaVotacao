@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Dados do Projeto</h2>
+<div mat-dialog-content class="tamanho-modal">
+  <mat-tab-group>
+    <mat-tab label="Dados Básicos">
+      <div class='label-modal'> <b>nome:</b> {{data.nome}} </div>
+      <div class='label-modal'> <b>id: </b>{{data.id}} </div>
+      <div class='label-modal'> <b>data de entrada:</b> {{data.dt_entrada | date:'medium'}} </div>
+
+    </mat-tab>
+    <mat-tab label="Participantes">
+      <div class="label-modal">{{data.participantes}} </div>
+    </mat-tab>
+    <mat-tab label="Dados Participantes">
+      <div class="label-modal">{{data.dadosParticipantes}}</div>
+    </mat-tab>
+    <mat-tab label="Descrição">
+      <div class="label-modal">{{data.descricao}} </div>
+    </mat-tab>
+    <mat-tab label="Objetivos">
+      <div class="label-modal">{{data.objetivos}} </div>
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+  <div mat-dialog-actions>
+    <button mat-button color="primary" (click)="onNoClick()" cdkFocusInitial>Fechar</button>
+  </div>
+</div>

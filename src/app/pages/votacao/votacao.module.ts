@@ -12,9 +12,10 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatInputModule, MatRadioModule} from '@angular/material';
-import {MatTableModule} from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule, MatRadioModule, MatDialogModule, MatTabsModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
+import { DetalheDadosProjetoComponent } from './detalhe-dados-projeto/detalhe-dados-projeto.component';
 
 
 
@@ -22,6 +23,7 @@ import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     VotacaoComponent,
+    DetalheDadosProjetoComponent
   ],
   imports: [
     CommonModule,
@@ -38,12 +40,17 @@ import {MatTableModule} from '@angular/material/table';
     MatExpansionModule,
     MatInputModule,
     MatTableModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule,
+    MatTabsModule,
 
 
   ],
   exports: [
-    VotacaoComponent
+    VotacaoComponent,
+  ],
+  entryComponents: [
+    DetalheDadosProjetoComponent
   ],
   providers: [
     VotacaoService

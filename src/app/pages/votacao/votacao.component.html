@@ -28,11 +28,13 @@
                                         </mat-radio-button>
                                         <div [ngClass]="{'class-bold': o==1 }"> {{proj.nome}}</div>
                                     </mat-panel-title>
-                                    <div *ngIf="o==1">
-                                        <mat-panel-description>
+                                    <mat-panel-description class="descricao-header-projeto">
+                                        <div style="margin-right: 40px;" *ngIf="o==1">
                                             <b>Voto do Relator - Fulano de Tal</b>
-                                        </mat-panel-description>
-                                    </div>
+                                        </div>
+                                        <mat-icon (click)="modalDadosProjeto(proj)">date_range</mat-icon>
+
+                                    </mat-panel-description>
                                 </mat-expansion-panel-header>
 
                                 <mat-form-field class="full-width">

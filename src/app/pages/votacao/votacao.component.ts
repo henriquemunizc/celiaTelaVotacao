@@ -3,20 +3,22 @@ import { CategoriaModel } from './../../utils/models/categoria.model';
 import { VotacaoService } from './../../utils/services/votacao.service';
 
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+// import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MatDialog } from '@angular/material/dialog';
+import { DetalheDadosProjetoComponent } from './detalhe-dados-projeto/detalhe-dados-projeto.component';
 
 
 @Component({
   selector: 'app-votacao',
   templateUrl: './votacao.component.html',
   styleUrls: ['./votacao.component.scss'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0' })),
-      state('expanded', style({ height: '*' })),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
+  // animations: [
+  //   trigger('detailExpand', [
+  //     state('collapsed', style({ height: '0px', minHeight: '0' })),
+  //     state('expanded', style({ height: '*' })),
+  //     transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+  //   ]),
+  // ],
 })
 export class VotacaoComponent implements OnInit {
 
@@ -30,7 +32,8 @@ export class VotacaoComponent implements OnInit {
   projetoExpandido: ProjetoModel | null;
 
   constructor(
-    private votacaoService: VotacaoService
+    private votacaoService: VotacaoService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -38,6 +41,9 @@ export class VotacaoComponent implements OnInit {
     this.projetosSelecionados = [];
 
   }
+
+
+
 
   getProjetosIdCategoria(categoria: CategoriaModel) {
     this.projetos = [];
@@ -81,7 +87,15 @@ export class VotacaoComponent implements OnInit {
 
   }
 
-  teste() {
-    console.log('Aqui');
+  modalDadosProjeto(projeto: ProjetoModel): void {
+    console.log(projeto);
+    const dialogRef = this.dialog.open(DetalheDadosProjetoComponent, {
+      data: projeto
+    });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    //   this.animal = result;
+    // });
   }
 }
